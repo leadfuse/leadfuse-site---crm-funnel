@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" href="assets/favicon-32.png">
+  <title>Book your call | LEADFUSE</title>
+  <meta property="og:title" content="Book your call | LEADFUSE">
+  <meta property="og:description" content="You qualified. Pick a time. 30 minutes on Google Meet. No pitch.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/styles.css">
+  <script src="_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/_ds_bundle.js"></script>
+  <script src="https://go.leadfuse.co/js/form_embed.js" async></script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#050505}
+    ::selection{background:#E50011;color:#fff}
+    a{color:#E50011}a:hover{color:#FF1524}
+    @keyframes lfPulse{0%,100%{opacity:1}50%{opacity:.4}}
+    @keyframes lfSpin{to{transform:rotate(360deg)}}
+    summary::-webkit-details-marker{display:none}
+    details[open] .lf-fx{transform:rotate(45deg)}
+  </style>
+</helmet>
+<div style="background:#050505;min-height:100vh;font-family:var(--font-sans);color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden">
+
+  <header id="calendar-top" data-screen-label="Booking hero" style="position:relative;padding:clamp(28px,6vw,56px) 20px 0;overflow:hidden">
+    <div style="position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:min(1000px,150vw);height:600px;background:radial-gradient(ellipse at center,rgba(229,0,17,.15),transparent 62%);pointer-events:none"></div>
+    <div style="max-width:720px;margin:0 auto;text-align:center;position:relative">
+      <a href="index.html" style="display:block;width:fit-content;margin:0 auto clamp(24px,5vw,36px)"><img src="assets/logo-silver@4x.png" alt="LEADFUSE" style="height:26px;width:auto;display:block"></a>
+      <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 18px">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.45)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2FBE5F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6L9 17l-5-5"></path></svg>Fill out the form</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#fff"><span style="width:8px;height:8px;border-radius:999px;background:#E50011;box-shadow:0 0 10px rgba(229,0,17,.9),0 0 3px rgba(229,0,17,.9);animation:lfPulse 2.2s ease-in-out infinite"></span>Book your call</span>
+      </div>
+      <h1 style="margin:18px 0 0;font-size:clamp(30px,7.4vw,56px);font-weight:800;line-height:1.06;letter-spacing:-.02em;color:#fff;text-wrap:balance">Pick A Time. Takes <em style="font-family:var(--font-serif-display);font-style:italic;font-weight:400;color:#E50011">60 Seconds.</em></h1>
+      <p style="margin:14px auto 0;max-width:560px;font-size:clamp(14px,3.8vw,16.5px);line-height:1.6;color:rgba(255,255,255,.62);text-wrap:pretty">The second you book, we start on your free website demo. You&#8217;ll see it live on the call.</p>
+    </div>
+  </header>
+
+  <section data-screen-label="Calendar" style="padding:clamp(24px,5vw,40px) 16px clamp(48px,9vw,80px)">
+    <div style="max-width:860px;margin:0 auto">
+      <div style="position:relative">
+        <div style="position:absolute;inset:-1px;border-radius:17px;background:linear-gradient(135deg,rgba(229,0,17,.45),rgba(255,255,255,.08) 40%,rgba(229,0,17,.2))"></div>
+        <div style="position:relative;border-radius:16px;overflow:hidden;background:#0C0C0C;min-height:640px">
+          <iframe src="{{ calendarSrc }}" id="tcJXHsEvZrLtpf2jPO1q_1785954152592" title="Book your call" scrolling="no" style="width:100%;border:none;overflow:hidden;min-height:640px;background:transparent;display:block"></iframe>
+        </div>
+      </div>
+      <sc-if value="{{ booked }}" hint-placeholder-val="{{ false }}">
+        <div style="margin:18px auto 0;max-width:520px;display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:12px;background:rgba(229,0,17,.1);border:1px solid rgba(229,0,17,.4)">
+          <div style="width:18px;height:18px;border:2px solid rgba(229,0,17,.35);border-top-color:#E50011;border-radius:50%;animation:lfSpin .8s linear infinite;flex:none"></div>
+          <span style="font-size:14px;color:#fff">Booked. Taking you to your confirmation…</span>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section data-screen-label="What you get on the call" style="position:relative;padding:clamp(56px,10vw,100px) 20px;border-top:1px solid rgba(255,255,255,.07);overflow:hidden">
+    <div style="position:absolute;left:-300px;bottom:-200px;width:800px;height:600px;background:radial-gradient(ellipse,rgba(229,0,17,.09),transparent 60%);pointer-events:none"></div>
+    <div style="max-width:1140px;margin:0 auto;position:relative">
+      <div style="max-width:640px;margin:0 auto;text-align:center">
+        <h2 style="margin:0;font-size:clamp(28px,6vw,48px);font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.08;text-wrap:balance">What you&#8217;ll get on the <em style="font-family:var(--font-serif-display);font-style:italic;font-weight:400;color:#E50011">free 30-minute call.</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-top:clamp(32px,6vw,54px)">
+        <x-import component-from-global-scope="LeadfuseDesignSystem_e3be75.GlassPanel" hover="true" hint-size="100%,220px">
+          <div style="font-family:var(--font-serif-display);font-style:italic;font-size:40px;color:#E50011;line-height:1;text-shadow:0 0 30px rgba(229,0,17,.5)">01</div>
+          <h3 style="margin:18px 0 10px;font-size:19px;font-weight:700;color:#fff">We map your lead flow</h3>
+          <p style="margin:0;font-size:14px;line-height:1.65;color:rgba(255,255,255,.55)">Where your leads come from. Where they go. And where they die.</p>
+        </x-import>
+        <x-import component-from-global-scope="LeadfuseDesignSystem_e3be75.GlassPanel" hover="true" hint-size="100%,220px">
+          <div style="font-family:var(--font-serif-display);font-style:italic;font-size:40px;color:#E50011;line-height:1;text-shadow:0 0 30px rgba(229,0,17,.5)">02</div>
+          <h3 style="margin:18px 0 10px;font-size:19px;font-weight:700;color:#fff">You see your new website. Free.</h3>
+          <p style="margin:0;font-size:14px;line-height:1.65;color:rgba(255,255,255,.55)">Before the call, we build a demo of what YOUR site would look like, wired into the LEADFUSE App. You see it live on the call. Like it, we build the real thing. Don&#8217;t, you pay nothing.</p>
+        </x-import>
+        <x-import component-from-global-scope="LeadfuseDesignSystem_e3be75.GlassPanel" hover="true" hint-size="100%,220px">
+          <div style="font-family:var(--font-serif-display);font-style:italic;font-size:40px;color:#E50011;line-height:1;text-shadow:0 0 30px rgba(229,0,17,.5)">03</div>
+          <h3 style="margin:18px 0 10px;font-size:19px;font-weight:700;color:#fff">You get a straight answer</h3>
+          <p style="margin:0;font-size:14px;line-height:1.65;color:rgba(255,255,255,.55)">If it&#8217;s a good fit, we&#8217;ll show you the next step. If it&#8217;s not, we&#8217;ll tell you.</p>
+        </x-import>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:clamp(28px,6vw,40px)">
+        <x-import component-from-global-scope="LeadfuseDesignSystem_e3be75.GlowButton" size="lg" block="true" onClick="{{ scrollTop }}" dc-props="{{ ctaProps }}" hint-size="220px,62px" style="width:100%;max-width:440px">Book my call</x-import>
+        <div style="font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);text-align:center">Takes 60 seconds. We&#8217;ll have a free demo of your site ready for the call.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Proof strip" style="border-top:1px solid rgba(255,255,255,.07);padding:clamp(56px,10vw,100px) 20px">
+    <div style="max-width:1140px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(24px,5vw,36px)">
+        <h2 style="margin:0;font-size:clamp(24px,5.8vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.08;color:#fff;text-wrap:balance">What clients on the LEADFUSE App are sending us <em style="font-family:var(--font-serif-display);font-style:italic;font-weight:400;color:#E50011">daily.</em></h2>
+      </div>
+      <div style="{{ proofWrapStyle }}">
+        <div style="{{ p0 }}"><img src="assets/proof/slack-austin-elworth.jpg" alt="Austin Elworth, closed over $8K, $13K by end of day" style="width:100%;height:auto;display:block"></div>
+        <div style="{{ p1 }}"><img src="assets/proof/slack-grayson-abercrombie.jpg" alt="Grayson Abercrombie, $26K on the schedule by the 7th, $11.3K next week" style="width:100%;height:auto;display:block"></div>
+        <div style="{{ p2 }}"><img src="assets/proof/slack-price-dyer.png" alt="Price Dyer, $6K booked in 24 hours" style="width:100%;height:auto;display:block"></div>
+        <div style="{{ p3 }}"><img src="assets/proof/slack-mike-reynoso.jpg" alt="Mike Reynoso, best week ever, about $8,000 off the SMS blast" style="width:100%;height:auto;display:block"></div>
+        <div style="{{ p4 }}"><img src="assets/proof/slack-brayden-stacy.png" alt="Brayden Stacy, $8,178 closed, breaking $9K on the promo" style="width:100%;height:auto;display:block"></div>
+        <div style="{{ p5 }}"><img src="assets/proof/slack-christian-douglas.jpg" alt="Christian Douglas, over $4K booked, closing the day at $6K" style="width:100%;height:auto;display:block"></div>
+        <div style="{{ p6 }}"><img src="assets/proof/slack-pete-tienken.png" alt="Pete Tienken, $6,400 booked in 3 days" style="width:100%;height:auto;display:block"></div>
+        <div style="{{ p7 }}"><img src="assets/proof/slack-trey-scott.png" alt="Trey Scott, several thousand booked in 24 hours" style="width:100%;height:auto;display:block"></div>
+        <div style="{{ p8 }}"><img src="assets/proof/slack-jared-santana.png" alt="Jared Santana, $1,574 booked in one hour" style="width:100%;height:auto;display:block"></div>
+        <div style="{{ p9 }}"><img src="assets/proof/slack-vincent-caruso.jpg" alt="Vincent Caruso, Slack result, raw screenshot" style="width:100%;height:auto;display:block"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:clamp(28px,6vw,40px)">
+        <x-import component-from-global-scope="LeadfuseDesignSystem_e3be75.GlowButton" size="lg" block="true" onClick="{{ scrollTop }}" dc-props="{{ ctaProps }}" hint-size="220px,62px" style="width:100%;max-width:440px">Book my call</x-import>
+        <div style="font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);text-align:center">Takes 60 seconds. We&#8217;ll have a free demo of your site ready for the call.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" data-screen-label="FAQ" style="padding:clamp(56px,10vw,100px) 20px;border-top:1px solid rgba(255,255,255,.07)">
+    <div style="max-width:760px;margin:0 auto">
+      <div style="text-align:center">
+        <h2 style="margin:0 0 36px;font-size:clamp(28px,6vw,44px);font-weight:800;letter-spacing:-.02em;color:#fff;text-wrap:balance">Frequently asked <em style="font-family:var(--font-serif-display);font-style:italic;font-weight:400;color:#E50011">questions.</em></h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <details open style="border-radius:14px;background:var(--glass-bg);border:var(--glass-border);padding:18px 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <h3 style="margin:0;font-size:15px;font-weight:600;line-height:1.45;color:#fff">What makes you different from a web design agency?</h3>
+            <span class="lf-fx" style="flex:none;width:18px;height:18px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:18px;font-weight:300;line-height:1;margin-top:1px;transition:transform .18s cubic-bezier(.4,0,.2,1)">+</span>
+          </summary>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)"><strong style="color:rgba(255,255,255,.85);font-weight:600">Three things.</strong> One, we only work with automotive detailing businesses. Not dentists, not lawyers, not plumbers. Two, we don&#8217;t hand you a pretty site and disappear. We wire the site into the LEADFUSE App, turn on the notifications, and walk you through everything live before we hand it over. Three, proof. We&#8217;ve served 100+ detailing businesses and tracked over $3M in booked revenue through our systems.</p>
+        </details>
+        <details open style="border-radius:14px;background:var(--glass-bg);border:var(--glass-border);padding:18px 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <h3 style="margin:0;font-size:15px;font-weight:600;line-height:1.45;color:#fff">What&#8217;s the free website demo?</h3>
+            <span class="lf-fx" style="flex:none;width:18px;height:18px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:18px;font-weight:300;line-height:1;margin-top:1px;transition:transform .18s cubic-bezier(.4,0,.2,1)">+</span>
+          </summary>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)">Before your call, we build a demo of what your new website could look like for your business. You see it live on the call. If you like it, we build the real thing. If you don&#8217;t, it costs you nothing. It&#8217;s the easiest way to see exactly what you&#8217;d be getting before you spend a dollar.</p>
+        </details>
+        <details open style="border-radius:14px;background:var(--glass-bg);border:var(--glass-border);padding:18px 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <h3 style="margin:0;font-size:15px;font-weight:600;line-height:1.45;color:#fff">I already have a website. Why would I need a new one?</h3>
+            <span class="lf-fx" style="flex:none;width:18px;height:18px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:18px;font-weight:300;line-height:1;margin-top:1px;transition:transform .18s cubic-bezier(.4,0,.2,1)">+</span>
+          </summary>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)">Here&#8217;s a test. Someone requests a quote on your site at 2 PM on a Tuesday. How fast do you know about it? If the answer isn&#8217;t seconds, your website isn&#8217;t working. Most detailing sites are brochures. Pretty pictures, a phone number, a form that emails an inbox you check at night. Ours are wired. The quote form pings your phone the second someone submits. A website that looks good gets you compliments. A website that&#8217;s wired gets you jobs.</p>
+        </details>
+        <details open style="border-radius:14px;background:var(--glass-bg);border:var(--glass-border);padding:18px 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <h3 style="margin:0;font-size:15px;font-weight:600;line-height:1.45;color:#fff">Do you guarantee results?</h3>
+            <span class="lf-fx" style="flex:none;width:18px;height:18px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:18px;font-weight:300;line-height:1;margin-top:1px;transition:transform .18s cubic-bezier(.4,0,.2,1)">+</span>
+          </summary>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)">We don&#8217;t guarantee revenue. Nobody honest can. We guarantee the two things we control. One: your website and LEADFUSE App live within 7 days of your onboarding call, or your first month of software is free. Two: if after 30 days you don&#8217;t feel more organized and clear on your leads, we jump on a second call and rebuild your pipeline and notifications with you at no extra cost. In writing. No fine print.</p>
+        </details>
+        <details open style="border-radius:14px;background:var(--glass-bg);border:var(--glass-border);padding:18px 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <h3 style="margin:0;font-size:15px;font-weight:600;line-height:1.45;color:#fff">What does it cost?</h3>
+            <span class="lf-fx" style="flex:none;width:18px;height:18px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:18px;font-weight:300;line-height:1;margin-top:1px;transition:transform .18s cubic-bezier(.4,0,.2,1)">+</span>
+          </summary>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)">Two ways to do it. Monthly Flex: $997 setup, then $397 per month. Or the 90-Day Launch: $1,497 paid in full. That waives the $997 setup fee, covers your first 90 days, and adds a 60-minute gameplan call with Sebastian plus 12 weeks of group calls. Both are $397 per month after the first 90 days. No hidden fees. No upsells.</p>
+        </details>
+        <details open style="border-radius:14px;background:var(--glass-bg);border:var(--glass-border);padding:18px 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <h3 style="margin:0;font-size:15px;font-weight:600;line-height:1.45;color:#fff">How fast does this go live?</h3>
+            <span class="lf-fx" style="flex:none;width:18px;height:18px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:18px;font-weight:300;line-height:1;margin-top:1px;transition:transform .18s cubic-bezier(.4,0,.2,1)">+</span>
+          </summary>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)">Seven days. That&#8217;s not a goal. That&#8217;s a guarantee. You sign up, we get on your onboarding call, we connect your accounts, and we build. Within 7 days your site is live and every lead flows into one inbox. Or your first month of software is free.</p>
+        </details>
+        <details open style="border-radius:14px;background:var(--glass-bg);border:var(--glass-border);padding:18px 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <h3 style="margin:0;font-size:15px;font-weight:600;line-height:1.45;color:#fff">What if I don&#8217;t have time to manage this?</h3>
+            <span class="lf-fx" style="flex:none;width:18px;height:18px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:18px;font-weight:300;line-height:1;margin-top:1px;transition:transform .18s cubic-bezier(.4,0,.2,1)">+</span>
+          </summary>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)">We do the build. All of it. The site, the LEADFUSE App, the quote form, the chat widget, the automations. Your part is two things. Show up to one onboarding call, then answer your leads when your phone buzzes. If you can text a customer, you can run this system.</p>
+        </details>
+        <details open style="border-radius:14px;background:var(--glass-bg);border:var(--glass-border);padding:18px 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <h3 style="margin:0;font-size:15px;font-weight:600;line-height:1.45;color:#fff">I tried a CRM before and quit. Why would this stick?</h3>
+            <span class="lf-fx" style="flex:none;width:18px;height:18px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:18px;font-weight:300;line-height:1;margin-top:1px;transition:transform .18s cubic-bezier(.4,0,.2,1)">+</span>
+          </summary>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)">Let me guess. You signed up, poked around, it was empty, and nothing buzzed your phone. So you went back to your DMs. That&#8217;s not a you problem. A CRM with no leads flowing into it is a gym membership you never use. The LEADFUSE App shows up installed, wired to your new site, with leads flowing in on day one. You didn&#8217;t fail at CRMs. You never had one that was plugged in.</p>
+        </details>
+        <details open style="border-radius:14px;background:var(--glass-bg);border:var(--glass-border);padding:18px 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <h3 style="margin:0;font-size:15px;font-weight:600;line-height:1.45;color:#fff">How do I know if I&#8217;m a good fit?</h3>
+            <span class="lf-fx" style="flex:none;width:18px;height:18px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:18px;font-weight:300;line-height:1;margin-top:1px;transition:transform .18s cubic-bezier(.4,0,.2,1)">+</span>
+          </summary>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.6)">You run a detailing business, mobile or shop. You&#8217;re getting inquiries every week. You&#8217;re losing some of them and you know it. You&#8217;ll answer your phone when it buzzes. And you can commit to 90 days. You already filled out the form, so one thing is left. Pick your time above.</p>
+        </details>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:clamp(28px,6vw,40px)">
+        <x-import component-from-global-scope="LeadfuseDesignSystem_e3be75.GlowButton" size="lg" block="true" onClick="{{ scrollTop }}" dc-props="{{ ctaProps }}" hint-size="220px,62px" style="width:100%;max-width:440px">Book my call</x-import>
+        <div style="font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);text-align:center">Takes 60 seconds. We&#8217;ll have a free demo of your site ready for the call.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(255,255,255,.07);padding:clamp(40px,8vw,60px) 20px 44px">
+    <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center">
+      <img src="assets/logo-silver@4x.png" alt="LEADFUSE" style="height:22px;width:auto;display:block">
+      <div style="display:flex;justify-content:center;gap:12px 30px;flex-wrap:wrap">
+        <a href="privacy-policy.html" style="color:rgba(255,255,255,.6);font-size:13px;font-weight:500;text-decoration:none" style-hover="color:#fff">Privacy Policy</a>
+        <a href="terms-of-use.html" style="color:rgba(255,255,255,.6);font-size:13px;font-weight:500;text-decoration:none" style-hover="color:#fff">Terms of Use</a>
+        <a href="earnings-disclaimer.html" style="color:rgba(255,255,255,.6);font-size:13px;font-weight:500;text-decoration:none" style-hover="color:#fff">Earnings Disclaimer</a>
+      </div>
+      <p style="margin:0;font-size:11px;line-height:1.75;color:rgba(255,255,255,.32);text-wrap:pretty">LEADFUSE: Results are not typical and are not guaranteed. The client results shown on this site are real, but they come from automotive business owners who did the work. Your results depend on your effort, experience, pricing, market, service capacity, and how fast you answer your leads. We do not track the typical results of every business we work with, and we cannot guarantee that you will book jobs or make money using our systems, strategies, or ideas. Any guarantee we advertise is defined solely by the written terms of the applicable service agreement. Nothing on this site is investment, tax, legal, or other professional advice. This site is not part of, and is not endorsed by, Meta Platforms, Inc., Facebook, Instagram, or Google. All content on this website is property of LEADFUSE. Any use of the images, content, or ideas expressed here without the express written consent of LEADFUSE is prohibited.</p>
+      <span style="font-size:12.5px;color:rgba(255,255,255,.45)">© 2026 LEADFUSE. All rights reserved.</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;calendarUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://go.leadfuse.co/widget/booking/UxgxhRPbXkvlvV2Vxbwy&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Embeds&quot;},&quot;autoRedirect&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Embeds&quot;}}">
+class Component extends DCLogic {
+  state = { booked: false, isMobile: false };
+
+  componentDidMount() {
+    setTimeout(() => document.querySelectorAll('#faq details').forEach(d => { d.open = true; }), 0);
+    this._onResize = () => this.setState({ isMobile: window.innerWidth < 700 });
+    this._onResize();
+    window.addEventListener('resize', this._onResize);
+    this._onMsg = (e) => {
+      if (this.state.booked) return;
+      const cal = document.getElementById('tcJXHsEvZrLtpf2jPO1q_1784838342379');
+      const fromCal = (cal && e.source === cal.contentWindow) || /(^|\.)leadfuse\.co$/.test((() => { try { return new URL(e.origin).hostname; } catch (err) { return ''; } })());
+      if (!fromCal) return;
+      let d = '';
+      try { d = typeof e.data === 'string' ? e.data : JSON.stringify(e.data); } catch (err) { return; }
+      if (/appointment/i.test(d) && /booked|confirmed|success/i.test(d)) {
+        this.setState({ booked: true });
+        if (this.props.autoRedirect ?? true) {
+          setTimeout(() => { window.location.href = 'confirmed.html'; }, 1800);
+        }
+      }
+    };
+    window.addEventListener('message', this._onMsg);
+    this._unhide = setTimeout(() => {
+      const cal = document.getElementById('tcJXHsEvZrLtpf2jPO1q_1784838342379');
+      if (cal && cal.getBoundingClientRect().left < -1000) {
+        cal.style.position = 'static';
+        cal.style.left = 'auto';
+        cal.style.width = '100%';
+        cal.style.minHeight = '640px';
+      }
+    }, 2500);
+    requestAnimationFrame(() => this._reveal());
+  }
+  componentWillUnmount() {
+    if (this._unhide) clearTimeout(this._unhide);
+    window.removeEventListener('message', this._onMsg);
+    window.removeEventListener('resize', this._onResize);
+    if (this._rio) this._rio.disconnect();
+  }
+
+  _reveal() {
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-screen-label]').forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1)';
+      io.observe(el);
+    });
+    this._rio = io;
+  }
+
+  renderVals() {
+    const s = this.state;
+    const mob = s.isMobile;
+    const proofWrapStyle = mob
+      ? { display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 4 }
+      : { columnWidth: 340, columnGap: 12 };
+    const proofStyles = {};
+    for (let i = 0; i < 10; i++) {
+      proofStyles['p' + i] = mob
+        ? { width: 'min(100%,370px)', borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(229,0,17,.6)', background: '#0B0B0B', marginTop: i === 0 ? 0 : -64, transform: 'rotate(' + (i % 2 ? 1.6 : -1.6) + 'deg) translateX(' + (i % 2 ? 6 : -6) + 'px)', boxShadow: '0 18px 44px rgba(0,0,0,.65)', position: 'relative' }
+        : { borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(229,0,17,.6)', background: '#0B0B0B', breakInside: 'avoid', marginBottom: 12 };
+    }
+    const ctaProps = { style: { width: '100%', padding: mob ? '23px 30px' : '21px 38px', fontSize: mob ? 16 : 15, borderRadius: 12, letterSpacing: '.06em' } };
+    return Object.assign({
+      calendarSrc: this.props.calendarUrl ?? 'https://go.leadfuse.co/widget/booking/UxgxhRPbXkvlvV2Vxbwy',
+      booked: s.booked,
+      scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      proofWrapStyle, ctaProps,
+    }, proofStyles);
+  }
+}
+</script>
+</body>
+</html>
