@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#050505"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#050505"/><circle cx="50" cy="50" r="20" fill="#E50011"/><path d="M45 41l16 9-16 9z" fill="#fff"/></svg></template>
+<x-dc>
+<helmet>
+  <link rel="icon" href="/assets/favicon-32.png">
+  <title>You're booked | LEADFUSE</title>
+  <meta property="og:title" content="You're booked | LEADFUSE">
+  <meta property="og:description" content="You're booked. Now do these two things before your call.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/fonts.css">
+  <link rel="stylesheet" href="/_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/colors.css">
+  <link rel="stylesheet" href="/_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/typography.css">
+  <link rel="stylesheet" href="/_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/spacing.css">
+  <link rel="stylesheet" href="/_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/tokens/effects.css">
+  <link rel="stylesheet" href="/_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/styles.css">
+  <script src="/_ds/leadfuse-design-system-e3be75cf-f7a5-414a-9771-ccf6955737da/_ds_bundle.js"></script>
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/6tv1ltftf3.js" async type="module"></script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#050505}
+    ::selection{background:#E50011;color:#fff}
+    a{color:#E50011}a:hover{color:#FF1524}
+    @keyframes lfPulse{0%,100%{opacity:1}50%{opacity:.4}}
+    wistia-player:not(:defined){background:#0C0C0C;display:block}
+  </style>
+</helmet>
+<div style="background:#050505;min-height:100vh;font-family:var(--font-sans);color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden">
+
+  <header data-screen-label="Confirmation hero" style="position:relative;padding:clamp(28px,6vw,56px) 20px 0;overflow:hidden">
+    <div style="position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:min(1000px,150vw);height:600px;background:radial-gradient(ellipse at center,rgba(229,0,17,.14),transparent 62%);pointer-events:none"></div>
+    <div style="max-width:760px;margin:0 auto;text-align:center;position:relative">
+      <a href="/" style="display:block;width:fit-content;margin:0 auto clamp(26px,6vw,40px)"><img src="/assets/logo-silver@4x.png" alt="LEADFUSE" style="height:26px;width:auto;display:block"></a>
+      <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 18px">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.45)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2FBE5F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6L9 17l-5-5"></path></svg>Fill out the form</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.45)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2FBE5F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6L9 17l-5-5"></path></svg>Book your call</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#fff"><span style="width:8px;height:8px;border-radius:999px;background:#E50011;box-shadow:0 0 10px rgba(229,0,17,.9),0 0 3px rgba(229,0,17,.9);animation:lfPulse 2.2s ease-in-out infinite"></span>Prep your call</span>
+      </div>
+      <h1 style="margin:18px 0 0;font-size:clamp(30px,7.4vw,54px);font-weight:800;line-height:1.07;letter-spacing:-.02em;color:#fff;text-wrap:balance">You&#8217;re Booked. Now Do These <em style="font-family:var(--font-serif-display);font-style:italic;font-weight:400;color:#E50011">Two Things.</em></h1>
+      <div style="margin:24px auto 0;max-width:420px;text-align:left">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+          <span style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)">Call readiness</span>
+          <span style="font-size:16px;font-weight:800;color:#fff">{{ readyPct }}</span>
+        </div>
+        <div style="height:8px;border-radius:999px;background:#1E1E1E;border:1px solid rgba(255,255,255,.06);overflow:hidden">
+          <div style="{{ readyBarStyle }}"></div>
+        </div>
+        <div style="margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.5)">{{ readyHint }}</div>
+      </div>
+    </div>
+  </header>
+
+  <section data-screen-label="Three steps" style="padding:clamp(32px,6vw,56px) 20px clamp(24px,5vw,40px)">
+    <div style="max-width:860px;margin:0 auto 16px;border-radius:16px;background:#0D0D0D;border:1px solid rgba(229,0,17,.22);padding:clamp(20px,4.5vw,26px) clamp(22px,5vw,30px);box-shadow:inset 0 1px 0 rgba(255,255,255,.03)">
+      <p style="margin:0;font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.65);text-align:center;text-wrap:pretty">While you do these two things, we&#8217;re building your <b style="color:#fff;font-weight:600">free website demo</b>. A real preview of YOUR new site, wired the way we&#8217;d wire it. We only show it live on the call. <b style="color:#fff;font-weight:600">One more reason not to miss it.</b></p>
+    </div>
+    <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+
+      <div style="border-radius:16px;background:#0D0D0D;border:1px solid rgba(229,0,17,.22);padding:clamp(22px,5vw,30px);box-shadow:inset 0 1px 0 rgba(255,255,255,.03);position:relative">
+        <div style="font-family:var(--font-serif-display);font-style:italic;font-size:44px;color:#E50011;line-height:1;text-shadow:0 0 30px rgba(229,0,17,.5)">01</div>
+        <sc-if value="{{ calChecked }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;background:#E50011;box-shadow:0 0 18px rgba(229,0,17,.6);display:flex;align-items:center;justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span></sc-if>
+        <h3 style="margin:16px 0 8px;font-size:18px;font-weight:700;color:#fff">Add it to your Google Calendar</h3>
+        <p style="margin:0 0 18px;font-size:14px;line-height:1.65;color:rgba(255,255,255,.55)">Open the confirmation email from <b style="color:#fff;font-weight:600">LEADFUSE</b> and tap &#8220;Add to calendar.&#8221; Not there? Check spam. No-show without canceling means no rebook.</p>
+        <x-import component-from-global-scope="LeadfuseDesignSystem_e3be75.GlowButton" ghost="true" size="md" block="true" onClick="{{ openGmail }}" hint-size="100%,46px">Open my Gmail</x-import>
+        <button onClick="{{ toggleCal }}" style="all:unset;box-sizing:border-box;display:flex;align-items:center;gap:12px;width:100%;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);cursor:pointer;min-height:44px">
+          <span style="{{ calBoxStyle }}">
+            <sc-if value="{{ calChecked }}" hint-placeholder-val="{{ false }}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+          </span>
+          <span style="{{ calLabelStyle }}">{{ calLabel }}</span>
+        </button>
+      </div>
+
+      <div style="border-radius:16px;background:#0D0D0D;border:1px solid rgba(229,0,17,.22);padding:clamp(22px,5vw,30px);box-shadow:inset 0 1px 0 rgba(255,255,255,.03);position:relative">
+        <div style="font-family:var(--font-serif-display);font-style:italic;font-size:44px;color:#E50011;line-height:1;text-shadow:0 0 30px rgba(229,0,17,.5)">02</div>
+        <sc-if value="{{ stepDone }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;background:#E50011;box-shadow:0 0 18px rgba(229,0,17,.6);display:flex;align-items:center;justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span></sc-if>
+        <h3 style="margin:16px 0 8px;font-size:18px;font-weight:700;color:#fff">Watch the breakdown</h3>
+        <p style="margin:0 0 16px;font-size:14px;line-height:1.65;color:rgba(255,255,255,.55)">Watch it on 2x if you want. It makes the call about your plan, not the basics.</p>
+        <div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:2.6815642458100557;background:#0C0C0C">
+          <sc-if value="{{ vslOn }}" hint-placeholder-val="{{ false }}">
+            <wistia-player media-id="6tv1ltftf3" aspect="2.6815642458100557" autoplay="true" style="position:absolute;inset:0;width:100%;height:100%;display:block"></wistia-player>
+          </sc-if>
+          <sc-if value="{{ vslOff }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ playVsl }}" aria-label="Watch the breakdown" style="all:unset;box-sizing:border-box;position:absolute;inset:0;cursor:pointer;display:block;width:100%">
+              <span style="{{ vslThumbBg }}"></span>
+              <span style="position:absolute;inset:0;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center"><span style="width:56px;height:56px;border-radius:50%;background:rgba(229,0,17,.92);box-shadow:var(--glow-red);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg></span></span>
+            </button>
+          </sc-if>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:14px;font-size:13px;color:rgba(255,255,255,.55)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="{{ lockColor }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><rect width="18" height="11" x="3" y="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <span style="{{ gateNoteStyle }}">{{ gateNote }}</span>
+        </div>
+      </div>
+
+    </div>
+    <p style="margin:clamp(28px,6vw,44px) auto 0;max-width:420px;text-align:center;font-size:14px;line-height:1.65;color:rgba(255,255,255,.45)">That&#8217;s the prep. One more thing. Read every email we send over the next 3 days, because on the call we&#8217;ll assume you did. Your website demo will be waiting. We&#8217;ll text you reminders too. See you on the call.</p>
+  </section>
+
+  <footer style="border-top:1px solid rgba(255,255,255,.07);padding:clamp(40px,8vw,60px) 20px 44px;margin-top:clamp(40px,8vw,64px)">
+    <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center">
+      <img src="/assets/logo-silver@4x.png" alt="LEADFUSE" style="height:22px;width:auto;display:block">
+      <div style="display:flex;justify-content:center;gap:12px 30px;flex-wrap:wrap">
+        <a href="/privacy-policy" style="color:rgba(255,255,255,.6);font-size:13px;font-weight:500;text-decoration:none" style-hover="color:#fff">Privacy Policy</a>
+        <a href="/terms-of-use" style="color:rgba(255,255,255,.6);font-size:13px;font-weight:500;text-decoration:none" style-hover="color:#fff">Terms of Use</a>
+        <a href="/earnings-disclaimer" style="color:rgba(255,255,255,.6);font-size:13px;font-weight:500;text-decoration:none" style-hover="color:#fff">Earnings Disclaimer</a>
+      </div>
+      <p style="margin:0;font-size:11px;line-height:1.75;color:rgba(255,255,255,.32);text-wrap:pretty">LEADFUSE: Results are not typical and are not guaranteed. The client results shown on this site are real, but they come from automotive business owners who did the work. Your results depend on your effort, experience, pricing, market, service capacity, and how fast you answer your leads. We do not track the typical results of every business we work with, and we cannot guarantee that you will book jobs or make money using our systems, strategies, or ideas. Any guarantee we advertise is defined solely by the written terms of the applicable service agreement. Nothing on this site is investment, tax, legal, or other professional advice. This site is not part of, and is not endorsed by, Meta Platforms, Inc., Facebook, Instagram, or Google. All content on this website is property of LEADFUSE. Any use of the images, content, or ideas expressed here without the express written consent of LEADFUSE is prohibited.</p>
+      <span style="font-size:12.5px;color:rgba(255,255,255,.45)">© 2026 LEADFUSE. All rights reserved.</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;gateSeconds&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:60,&quot;min&quot;:5,&quot;max&quot;:300,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  BREAKOUTS = [
+    { id: 'pendingfaq1', title: 'What happens on the call', duration: 'Placeholder · 60 to 90 sec' },
+    { id: 'pendingfaq2', title: 'How fast does this go live?', duration: 'Placeholder · 60 to 90 sec' },
+    { id: 'pendingfaq3', title: 'What does it cost?', duration: 'Placeholder · 60 to 90 sec' },
+    { id: 'pendingfaq4', title: 'What if I already have a website?', duration: 'Placeholder · 60 to 90 sec' },
+    { id: 'pendingfaq5', title: 'Do you guarantee results?', duration: 'Placeholder · 60 to 90 sec' },
+    { id: 'pendingfaq6', title: "What if I'm not good with tech?", duration: 'Placeholder · 60 to 90 sec' },
+    { id: 'pendingfaq7', title: 'What if I tried a CRM before?', duration: 'Placeholder · 60 to 90 sec' },
+    { id: 'pendingfaq8', title: 'Who is this NOT for?', duration: 'Placeholder · 60 to 90 sec' },
+  ];
+
+  constructor(props) {
+    super(props);
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem('lf_confirm') || '{}'); } catch (e) {}
+    this.state = { calChecked: !!saved.cal, unlocked: !!saved.unlocked, rf: !!saved.rf, vslPlaying: false, remaining: null, playing: {}, thumbs: {} };
+  }
+
+  componentDidMount() {
+    [...this.BREAKOUTS, { id: '6tv1ltftf3' }].forEach((b) => {
+      fetch('https://fast.wistia.com/oembed?url=' + encodeURIComponent('https://home.wistia.com/medias/' + b.id))
+        .then((r) => r.json())
+        .then((d) => { if (d && d.thumbnail_url) this.setState({ thumbs: { ...this.state.thumbs, [b.id]: d.thumbnail_url } }); })
+        .catch(() => {});
+    });
+    requestAnimationFrame(() => this._revealSections());
+  }
+  componentWillUnmount() {
+    if (this._timer) clearInterval(this._timer);
+    if (this._rio) this._rio.disconnect();
+  }
+
+  _revealSections() {
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-screen-label]:not([data-screen-label="Breakout videos"])').forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1)';
+      io.observe(el);
+    });
+    this._rio = io;
+  }
+
+  persist() {
+    try { localStorage.setItem('lf_confirm', JSON.stringify({ cal: this.state.calChecked, unlocked: this.state.unlocked, rf: this.state.rf })); } catch (e) {}
+  }
+
+  playVsl = () => {
+    if (this.state.vslPlaying) return;
+    const total = this.props.gateSeconds ?? 60;
+    this.setState({ vslPlaying: true, remaining: this.state.unlocked ? null : total });
+    if (!this.state.unlocked) {
+      this._timer = setInterval(() => {
+        const r = (this.state.remaining ?? 1) - 1;
+        if (r <= 0) {
+          clearInterval(this._timer);
+          this.setState({ unlocked: true, remaining: null }, () => this.persist());
+        } else this.setState({ remaining: r });
+      }, 1000);
+    }
+  };
+
+  renderVals() {
+    const s = this.state;
+    const locked = !s.unlocked;
+    const fmt = (sec) => Math.floor(sec / 60) + ':' + String(sec % 60).padStart(2, '0');
+    const gateNote = s.unlocked ? 'Step 2 done.' : s.vslPlaying ? 'Checks off in ' + fmt(s.remaining ?? 0) : 'Press play to check off step 2';
+    const pct = (s.calChecked ? 50 : 0) + (s.unlocked ? 50 : 0);
+    const readyHint = !s.calChecked ? 'Next: add it to your calendar. Step 1.'
+      : !s.unlocked ? 'Next: play the breakdown. Step 2.'
+      : 'Prep done. Read your emails. See you on the call.';
+    return {
+      readyPct: pct + '%',
+      readyHint,
+      readyBarStyle: { height: '100%', width: pct + '%', borderRadius: 999, background: 'linear-gradient(90deg,#E50011,#FF1524)', boxShadow: pct >= 100 ? '0 0 14px rgba(229,0,17,.8)' : '0 0 8px rgba(229,0,17,.45)', transition: 'width .6s cubic-bezier(.4,0,.2,1)' },
+      vslThumbBg: { position: 'absolute', inset: 0, backgroundImage: 'url("' + (s.thumbs['6tv1ltftf3'] || 'https://fast.wistia.com/embed/medias/6tv1ltftf3/swatch') + '")', backgroundSize: 'cover', backgroundPosition: 'center' },
+      openGmail: () => {
+        const webUrl = 'https://mail.google.com/mail/u/0/#search/leadfuse';
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+          const t = Date.now();
+          window.location.href = 'googlegmail://';
+          setTimeout(() => { if (Date.now() - t < 2000) window.location.href = webUrl; }, 1400);
+        } else window.open(webUrl, '_blank');
+      },
+      toggleCal: () => this.setState({ calChecked: !s.calChecked }, () => this.persist()),
+      calChecked: s.calChecked,
+      calBoxStyle: { width: 22, height: 22, borderRadius: 6, flex: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', background: s.calChecked ? '#E50011' : 'transparent', border: s.calChecked ? '1px solid #E50011' : '1px solid #3A3A3A', boxShadow: s.calChecked ? 'var(--glow-red-soft)' : 'none', transition: 'all .14s' },
+      calLabelStyle: { fontSize: 14, color: s.calChecked ? '#fff' : 'rgba(255,255,255,.55)', fontWeight: s.calChecked ? 600 : 400 },
+      calLabel: s.calChecked ? "It's on my calendar" : "Yes, it's on my calendar",
+      vslOn: s.vslPlaying, vslOff: !s.vslPlaying, playVsl: this.playVsl,
+      stepDone: s.unlocked,
+      lockColor: s.unlocked ? '#E50011' : '#8A8A8A',
+      gateNote,
+      gateNoteStyle: { color: s.unlocked ? '#fff' : 'rgba(255,255,255,.55)', fontWeight: s.unlocked ? 600 : 400 },
+      step3Style: { borderRadius: 16, background: '#0D0D0D', border: '1px solid rgba(229,0,17,.22)', padding: 'clamp(22px,5vw,30px)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.03)', opacity: locked ? 0.45 : 1, transition: 'opacity .5s' },
+      breakoutStyle: { padding: 'clamp(40px,8vw,72px) 20px 0', borderTop: '1px solid rgba(255,255,255,.07)', opacity: locked ? 0.35 : 1, pointerEvents: locked ? 'none' : 'auto', filter: locked ? 'grayscale(.4)' : 'none', transition: 'opacity .5s, filter .5s' },
+      breakouts: this.BREAKOUTS.map((b) => ({
+        id: b.id, title: b.title, duration: b.duration,
+        thumbBg: { position: 'absolute', inset: 0, backgroundImage: 'url("' + (s.thumbs[b.id] || 'https://fast.wistia.com/embed/medias/' + b.id + '/swatch') + '")', backgroundSize: 'cover', backgroundPosition: 'center' },
+        playing: !!s.playing[b.id], idle: !s.playing[b.id],
+        play: () => this.setState({ playing: { ...this.state.playing, [b.id]: true }, rf: true }, () => this.persist()),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>
